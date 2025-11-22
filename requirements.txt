@@ -1,0 +1,17 @@
+tensorflow==2.20.0
+pandas
+dvc
+mlflow
+notebook
+numpy
+matplotlib
+seaborn
+python-box==6.0.2
+PyYAML
+tqdm
+ensure==1.0.2
+joblib
+types-PyYAML
+fastapi
+gdown
+-e .
