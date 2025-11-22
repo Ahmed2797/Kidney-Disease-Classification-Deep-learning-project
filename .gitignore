@@ -1,6 +1,7 @@
 # .gitignore
 logs
 notex.txt
+artifacts
 
 
 # Byte-compiled / optimized / DLL files
