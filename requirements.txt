@@ -9,7 +9,7 @@ seaborn
 python-box==6.0.2
 PyYAML
 tqdm
-ensure==1.0.2
+ensure==1.0.4
 joblib
 types-PyYAML
 fastapi
