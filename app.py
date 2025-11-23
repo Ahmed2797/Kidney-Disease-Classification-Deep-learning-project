@@ -1,3 +1,11 @@
-from project.logger import logging 
+from project.pipeline import Traning_Pipeline 
+from project.exception import CustomException
+import sys
 
-logging.info("Logging & Exception done")
+
+if __name__ == "__main__":
+    try:
+        training_pipeline = Traning_Pipeline()
+        training_pipeline.run()
+    except Exception as e:
+        raise CustomException(e, sys)
