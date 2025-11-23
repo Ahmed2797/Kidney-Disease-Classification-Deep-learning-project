@@ -1,6 +1,9 @@
 
-from project.entity.config import DataIngestionConfig
+from project.entity.config import (DataIngestionConfig,
+PrepareBasemodelConfig)
+
 from project.components.data_ingestion import DataIngestion
+from project.components.prepare_basemodel import PrepareBaseModel
 from project.configeration import ConfigerationManager
 from project.exception import CustomException
 from project.logger import logging
@@ -27,7 +30,11 @@ class Traning_Pipeline:
     def get_prepare_base_model_pipeline(self):
         try:
             logging.info(">>>>>>> Prepare Base Model started <<<<<<<<<")
-            pass
+            config = ConfigerationManager()
+            prepare_base_model_config = config.get_prepare_base_model_config()
+            prepare_base_model = PrepareBaseModel(prepare_base_model_config)
+            prepare_base_model.get_base_model()
+            prepare_base_model.update_base_model()
             logging.info(">>>>>>> Prepare Base Model completed <<<<<<<<<")
         except Exception as e:
             raise CustomException(e, sys)
