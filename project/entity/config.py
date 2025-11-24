@@ -57,3 +57,27 @@ class PrepareCallbackConfig:
     tensorboard_root_log_dir: Path
     checkpoint_model_filepath: Path
 
+
+@dataclass(frozen=True)
+class TrainingConfig:
+    """
+    Dataclass for storing the configuration required to train the model.
+
+    Attributes:
+        root_dir (Path): Base directory for training artifacts.
+        trained_model_path (Path): Path where the trained model will be saved.
+        update_base_model (Path): Path to the updated base model file.
+        training_data (Path): Path to the training data.
+        param_image_size (list): List of image sizes for training.
+        param_batch_size (int): Batch size for training.
+        param_epochs (int): Number of epochs for training.
+    """ 
+    root_dir: Path
+    trained_model_path: Path
+    update_base_model: Path 
+    training_data: Path
+    param_image_size: list
+    param_batch_size: int
+    param_epochs: int 
+    params_augmentation: bool 
+    param_learning_rate: float
