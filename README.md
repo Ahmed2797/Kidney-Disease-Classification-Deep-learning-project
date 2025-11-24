@@ -97,4 +97,12 @@ Project Structure
     ├── param.yaml
     ├── __pycache__
     │   └── __init__.cpython-312.pyc
-    └── secrets.yaml
+    └── secrets.yaml 
+
+
+
+
+## Data Url
+data_url = 'https://drive.google.com/file/d/1RhMp1TyTY4YLVjMhCzAM7SqzMlSnn-Ib/view?usp=sharing'
+file_id = data_url.split('/')[-2]
+
