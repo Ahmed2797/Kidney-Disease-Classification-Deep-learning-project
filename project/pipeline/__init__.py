@@ -1,9 +1,14 @@
 
 from project.entity.config import (DataIngestionConfig,
-PrepareBasemodelConfig)
+PrepareBasemodelConfig,
+PrepareCallbackConfig)
 
-from project.components.data_ingestion import DataIngestion
+from project.components.data_ingestion import DataIngestion 
 from project.components.prepare_basemodel import PrepareBaseModel
+from project.components.callbacks import CallBacks
+
+
+
 from project.configeration import ConfigerationManager
 from project.exception import CustomException
 from project.logger import logging
@@ -38,6 +43,17 @@ class Traning_Pipeline:
             logging.info(">>>>>>> Prepare Base Model completed <<<<<<<<<")
         except Exception as e:
             raise CustomException(e, sys)
+        
+    def get_prepare_callback_pipeline(self):
+        try:
+            logging.info(">>>>>>> Prepare Callback started <<<<<<<<<")
+            config = ConfigerationManager()
+            callback_config = config.get_prepare_callback_config()
+            callback = CallBacks(callback_config)
+            callback_list=callback.get_tb_ckpt_callbacks()
+            logging.info(">>>>>>> Prepare Callback completed <<<<<<<<<")
+        except Exception as e:
+            raise CustomException(e, sys)   
 
     
 
@@ -46,6 +62,7 @@ class Traning_Pipeline:
             logging.info(">>>>>>> Training Pipeline started <<<<<<<<<")
             self.get_data_ingestion_pipeline()
             self.get_prepare_base_model_pipeline()
+            self.get_prepare_callback_pipeline()
             logging.info(">>>>>>> Training Pipeline completed <<<<<<<<<")
 
         except Exception as e:

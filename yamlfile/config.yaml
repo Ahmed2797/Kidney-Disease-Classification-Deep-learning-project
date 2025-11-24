@@ -11,3 +11,14 @@ prepare_base_model:
   root_dir: artifacts/prepare_base_model
   base_model: artifacts/prepare_base_model/vgg16.h5
   update_base_model: artifacts/prepare_base_model/update_base_mode.h5
+
+
+prepare_callbacks:
+  root_dir: artifacts/prepare_callbacks
+  tensorboard_root_log_dir: artifacts/prepare_callbacks/tensorboard_log_dir
+  checkpoint_model_filepath: artifacts/prepare_callbacks/checkpoint_/model.h5
+
+
+training:
+  root_dir: artifacts/training
+  trained_model_path: artifacts/training/model.h5
