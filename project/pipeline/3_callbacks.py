@@ -46,7 +46,10 @@ class CallBacks:
             self.config.tensorboard_root_log_dir,
             f"tb_logs_at_{timestamp}"
         )
-        return tf.keras.callbacks.TensorBoard(log_dir=tb_log_dir)
+        try:
+            return tf.keras.callbacks.TensorBoard(log_dir=tb_log_dir)
+        except Exception as e:
+            raise CustomException(e, sys)
 
     @property
     def create_ckpt_callback(self) -> tf.keras.callbacks.ModelCheckpoint:
@@ -60,10 +63,13 @@ class CallBacks:
         Returns:
             ModelCheckpoint: Keras model checkpoint callback instance.
         """
-        return tf.keras.callbacks.ModelCheckpoint(
-            filepath=self.config.checkpoint_model_filepath,
-            save_best_only=True
-        )
+        try:
+            return tf.keras.callbacks.ModelCheckpoint(
+                filepath=self.config.checkpoint_model_filepath,
+                save_best_only=True
+            )
+        except Exception as e:
+            raise CustomException(e, sys)
 
     def get_tb_ckpt_callbacks(self) -> list:
         """
@@ -72,7 +78,10 @@ class CallBacks:
         Returns:
             list: Contains TensorBoard and ModelCheckpoint callbacks.
         """
-        return [self.create_tb_callback, self.create_ckpt_callback]
+        try:
+            return [self.create_tb_callback, self.create_ckpt_callback]
+        except Exception as e:
+            raise CustomException(e, sys)
 
 
 # Testing
@@ -85,4 +94,4 @@ if __name__ == '__main__':
         callback_list = callback.get_tb_ckpt_callbacks()
         print(callback_list)
     except Exception as e:
-        raise 
+        raise CustomException(e, sys)
