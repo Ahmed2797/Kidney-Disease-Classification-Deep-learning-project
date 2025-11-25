@@ -22,3 +22,21 @@ prepare_callbacks:
 training:
   root_dir: artifacts/training
   trained_model_path: artifacts/training/model.h5
+
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  report_file_path: artifacts/model_evaluation/report.yaml
+  threshold_accuracy: 0.6
+  scores_file_dir: artifacts/model_evaluation/scores
+  scores_file: scores.json
+  report_file_dir: artifacts/model_evaluation/report
+  report_file: report.json
+  mlflow_tracking_uri: ""
+  mlflow_experiment_name: "kidney_classification_experiment"
+
+
+
+
+
+
