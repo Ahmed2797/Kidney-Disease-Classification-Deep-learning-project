@@ -4,6 +4,7 @@ import tensorflow as tf
 from pathlib import Path
 from project.exception import CustomException
 from project.entity.config import TrainingConfig
+from project.utils import create_directories
 
 
 
@@ -123,11 +124,16 @@ class Training:
                 verbose=1
             )
 
-            # Save the trained model
+            # Save the trained model to configured path
             self.save_model(
                 path=self.config.trained_model_path,
                 model=self.model
             )
+
+            # Optional: Save another copy
+            create_directories(["final_model"])
+            self.save_model(path="final_model/model.keras", model=self.model)
+
 
             return history
         except Exception as e:

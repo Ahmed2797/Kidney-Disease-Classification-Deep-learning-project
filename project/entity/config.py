@@ -81,3 +81,43 @@ class TrainingConfig:
     param_epochs: int 
     params_augmentation: bool 
     param_learning_rate: float
+
+
+
+@dataclass
+class ModelEvaluationConfig:
+    """
+    Configuration dataclass for model evaluation stage.
+
+    Attributes:
+        root_dir (Path): Root directory for storing evaluation artifacts.
+        report_file_path (Path): Path to save the main evaluation report YAML/JSON.
+        threshold_accuracy (float): Minimum accuracy threshold to consider model acceptable.
+        scores_file_dir (Path): Directory to store evaluation scores.
+        scores_file (str): Filename for the evaluation scores JSON.
+        report_file_dir (Path): Directory to store detailed evaluation reports.
+        report_file (str): Filename for the evaluation report JSON.
+        mlflow_tracking_uri (str): MLflow tracking server URI for logging metrics and models.
+        mlflow_experiment_name (str): Name of the MLflow experiment.
+        all_params (Dict): Dictionary of all hyperparameters and config values for reference/logging.
+        param_image_size (List[int]): Image size used during training/evaluation (Height, Width, Channels).
+        param_batch_size (int): Batch size used during evaluation.
+        training_data_path (Path): Path to the validation dataset for model evaluation.
+    """
+    root_dir: Path
+    report_file_path: Path
+    report_file_dir: Path
+    report_file: str
+    training_data_path: Path
+
+    scores_file_dir: Path
+    scores_file: str
+
+    mlflow_tracking_uri: str
+    mlflow_experiment_name: str
+
+    all_params: dict
+    param_image_size: list
+    param_batch_size: int
+    threshold_accuracy: float 
+     
