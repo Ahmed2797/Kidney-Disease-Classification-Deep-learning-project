@@ -1,0 +1,2 @@
+['remote "local_backup"']
+    url = /home/ahmed/dvc_backup
