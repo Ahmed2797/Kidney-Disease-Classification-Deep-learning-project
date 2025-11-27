@@ -2,6 +2,8 @@
 logs
 notex.txt
 artifacts
+mlruns/
+
 
 
 # Byte-compiled / optimized / DLL files
