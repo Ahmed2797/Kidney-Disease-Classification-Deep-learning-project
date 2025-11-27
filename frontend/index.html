@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kidney Disease Classification</title>
+
+  <!-- Updated path for CSS -->
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+  <main>
+    <h1>Kidney Disease Classification</h1>
+
+    <form id="upload-form">
+      <label for="image">Choose CT image (jpg/png):</label><br/>
+      <input type="file" id="image" name="image" accept="image/*" required /><br/><br/>
+      <button type="submit">Predict</button>
+    </form>
+
+    <section id="result" style="display:none;">
+      <h2>Result</h2>
+      <p><strong>File:</strong> <span id="filename"></span></p>
+      <p><strong>Prediction:</strong> <span id="prediction"></span></p>
+      <p><strong>Confidence:</strong> <span id="confidence"></span></p>
+    </section>
+
+    <div id="error" style="color:#b00020; font-weight: 600;"></div>
+  </main>
+
+  <!-- Updated path for JS -->
+  <script src="/static/upload.js"></script>
+</body>
+</html>

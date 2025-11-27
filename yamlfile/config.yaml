@@ -32,8 +32,8 @@ model_evaluation:
   scores_file: scores.json
   report_file_dir: artifacts/model_evaluation/report
   report_file: report.json
-  mlflow_tracking_uri: ""
-  mlflow_experiment_name: "kidney_classification_experiment"
+  mlflow_tracking_uri: "https://dagshub.com/Ahmed2797/Kidney-Disease-Classification-Deep-learning-project.mlflow"
+  mlflow_experiment_name: "kidney_disease_experiment"
 
 
 

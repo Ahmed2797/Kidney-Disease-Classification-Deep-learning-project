@@ -2,7 +2,7 @@ from project.components.data_ingestion import DataIngestion
 from project.components.prepare_basemodel import PrepareBaseModel
 from project.components.callbacks import CallBacks
 from project.components.model_training import Training
-from project.components.model_evalution import ModelEvaluation
+from project.components.model_evalution import Evaluation
 
 from project.configeration import ConfigerationManager
 from project.exception import CustomException
@@ -136,7 +136,7 @@ class TrainingPipeline:
         try:
             logging.info(">>>>>>> Model Evaluation started <<<<<<<<<")
             model_evaluation_config = self.config.get_model_evaluation_config()
-            model_evaluation = ModelEvaluation(model_evaluation_config)
+            model_evaluation = Evaluation(model_evaluation_config)
             model_evaluation.evaluate_model()
             logging.info(">>>>>>> Model Evaluation completed <<<<<<<<<")
         except Exception as e:

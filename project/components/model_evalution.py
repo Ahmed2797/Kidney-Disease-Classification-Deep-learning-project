@@ -11,6 +11,11 @@ import mlflow
 from project.entity.config import ModelEvaluationConfig
 from project.utils import save_json
 
+import dagshub
+dagshub.init(repo_owner='Ahmed2797', repo_name='Kidney-Disease-Classification-Deep-learning-project', mlflow=True)
+
+
+
 
 class Evaluation:
     """
@@ -91,6 +96,7 @@ class Evaluation:
     # ---------------------------------------------------------------------
     def log_mlflow(self):
         """Log metrics and model to MLflow."""
+        os.environ["MLFLOW_TRACKING_URI"] = self.config.mlflow_tracking_uri
         os.environ["MLFLOW_TRACKING_USERNAME"] = "Ahmed2797"
         os.environ["MLFLOW_TRACKING_PASSWORD"] = "466cd6e40b4463c19cee521d93d34f35fb915367"
 
