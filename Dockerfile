@@ -15,4 +15,5 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Command to run the app
-CMD ["python3", "app.py"]
+#CMD ["python3", "app.py"]
+CMD ["streamlit","run","stm.py"]

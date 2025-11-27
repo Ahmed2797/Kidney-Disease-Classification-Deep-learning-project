@@ -15,6 +15,7 @@
 
 
 How to run?
+
 STEPS:
 
 Clone the repository
@@ -37,9 +38,13 @@ deactivate  # Linux/Mac
 STEP 02- install the requirements
 
 pip install -r requirements.txt
+
 pip install python-multipart
 
 
+sudo apt  install tree
+
+terminal >> tree -L 3
 
 Project Structure
 
@@ -109,7 +114,6 @@ Project Structure
 ## Data Url
 data_url = 'https://drive.google.com/file/d/1RhMp1TyTY4YLVjMhCzAM7SqzMlSnn-Ib/view?usp=sharing'
 
-
 file_id = data_url.split('/')[-2]
 
 
@@ -118,7 +122,9 @@ file_id = data_url.split('/')[-2]
 ## DVC cmd
 
 dvc init
+
 dvc repro
+
 dvc dag
 
 ## MLflow
@@ -132,6 +138,7 @@ https://dagshub.com/docs/integration_guide/mlflow_tracking/
 export MLFLOW_TRACKING_URI= https://dagshub.com/Ahmed2797/Kidney-Disease-Classification-Deep-learning-project.mlflow
 
 export MLFLOW_TRACKING_USERNAME= Ahmed2797
+
 export MLFLOW_TRACKING_PASSWORD= 466cd6e40b4463c19cee521d93d34f35fb915367
 
 
