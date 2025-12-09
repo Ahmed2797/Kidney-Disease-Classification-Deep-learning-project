@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,8 +6,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kidney Disease Classification</title>
 
-  <!-- Updated path for CSS -->
-  <link rel="stylesheet" href="/static/styles.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    main {
+      width: 450px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.2);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 28px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    input[type="file"]:hover {
+      border-color: #00eaff;
+      box-shadow: 0 0 10px rgba(0,234,255,0.7);
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,210,255,0.5);
+    }
+
+    #result {
+      margin-top: 25px;
+      padding: 15px;
+      background: rgba(255,255,255,0.15);
+      border-left: 5px solid #00d2ff;
+      border-radius: 12px;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0,210,255,0.4);
+    }
+
+    #error {
+      margin-top: 15px;
+      color: #ff4d4f;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    @media(max-width: 500px){
+      main {
+        width: 90%;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Kidney Disease Classification</h1>
+
+    <form id="upload-form">
+      <label for="image">Choose CT image (jpg/png):</label>
+      <input type="file" id="image" name="image" accept="image/*" required />
+
+      <button type="submit">Predict</button>
+    </form>
+
+    <section id="result" style="display:none;">
+      <h2>Result</h2>
+      <p><strong>File:</strong> <span id="filename"></span></p>
+      <p><strong>Prediction:</strong> <span id="prediction"></span></p>
+      <p><strong>Confidence:</strong> <span id="confidence"></span></p>
+    </section>
+
+    <div id="error"></div>
+  </main>
+
+  
+  <script src="frontend/upload.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- ------------------------------------------------- -->
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kidney Disease Classification</title>
+
+  <link rel="stylesheet" href="frontend/styles.css" />
 </head>
 
 <body>
@@ -29,7 +182,9 @@
     <div id="error" style="color:#b00020; font-weight: 600;"></div>
   </main>
 
-  <!-- Updated path for JS -->
-  <script src="/static/upload.js"></script>
+  <script src="frontend/upload.js"></script>
 </body>
-</html>
+</html> -->
+
+<!-- Updated path for CSS -->
+<!-- Updated path for JS -->

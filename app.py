@@ -13,7 +13,7 @@ app = FastAPI()
 predictor = ImagePredictor("artifacts/training/model.h5")
 
 # Serve static files
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
 
 # Serve index.html manually
 @app.get("/")
